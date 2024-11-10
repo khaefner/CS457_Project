@@ -2,19 +2,6 @@ import os
 import subprocess
 from urllib.parse import urlparse, unquote, urlunparse
 import argparse
-"""
-def get_clean_repo_url_and_name(url):
-    parsed_url = urlparse(url)
-    path_parts = parsed_url.path.strip('/').split('/')
-
-    if len(path_parts) >= 2:
-        user_part = path_parts[0]
-        project_name = path_parts[1]
-        clean_repo_url = urlunparse(parsed_url._replace(path=f'/{user_part}/{project_name}'))
-        combined_name = f"{user_part}_{project_name}"
-        return clean_repo_url, unquote(combined_name)
-    return None, None
-"""
 def get_clean_repo_url_and_name(original_link):
     parsed_url = urlparse(original_link)
     path_segments = parsed_url.path.strip('/').split('/')
