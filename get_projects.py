@@ -59,6 +59,7 @@ def main(update=False):
                     continue
         else:
             os.makedirs(full_directory_path)
+            print(f"---------{full_directory_path}--------")
             try:
                 subprocess.run(['git', 'clone', repo_url, full_directory_path], check=True)
             except subprocess.CalledProcessError:

@@ -49,14 +49,14 @@ def pull_projects(update=None):
     pull_connection.start_single()
     pull_connection.initial_connection('pumpkin', f'ssh {servers[0]}')
     #cd to projects dir 
-    pull_connection.execute_command_in_pane('pumpkin','cd CS457_Project')
+    pull_connection.execute_command_on_one('pumpkin','cd CS457_Project')
     #Activate virtual environment
-    pull_connection.execute_command_in_pane('pumpkin','python3 -m venv venv')
-    pull_connection.execute_command_in_pane('pumpkin','source venv/bin/activate')
+    pull_connection.execute_command_on_one('pumpkin','python3 -m venv venv')
+    pull_connection.execute_command_on_one('pumpkin','source venv/bin/activate')
     if update:
-        pull_connection.execute_command_in_pane('pumpkin','python get_projects.py --update')
+        pull_connection.execute_command_on_one('pumpkin','python get_projects.py --update')
     else:
-        pull_connection.execute_command_in_pane('pumpkin','python get_projects.py')
+        pull_connection.execute_command_on_one('pumpkin','python get_projects.py')
 
     #connect to the tmux terminal
     subprocess.run(['tmux', 'attach-session', '-t', "pull_session"])

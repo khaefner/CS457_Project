@@ -1,7 +1,6 @@
 https://github.com/Jackson-Scott7/command-line-trivia-game
 https://github.com/TravisBarkley/connect-four-game
 https://github.com/kiepier11/CS457
-https://github.com/guerschu/Trivia-game-cs457-fall.git
 https://github.com/GraysonMor31/Treasure-Hunt
 https://github.com/goron117/word-game
 https://github.com/ebottoms/online-battleship
@@ -24,9 +23,8 @@ https://github.com/coreydc7/TCPoker
 https://github.com/RylieDD/networking-quiz-game
 https://github.com/safetrix/CS457-VideoGame
 https://github.com/SagarKothari7/Rock-Paper-Scissors-Game
-https://github.com/Peter0924/CS457_Group_Project_Connect_Four.git
 https://github.com/SeanCSU212/cs457_proj
-https://github.com/ekowkaay/zeus
+https://github.com/ekowkaay/tic-tac-toe-multiplayer
 https://github.com/camsuess/trivia-game
 https://github.com/Ioscipescu/trivia-game
 https://github.com/0xKilty/connect4
