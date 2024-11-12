@@ -35,7 +35,6 @@ https://github.com/jake222colostate/tic-tac-toe-sherman
 https://github.com/FireChickenProductivity/tic-tac-toe-game
 https://github.com/ivans-csu/super-cow-powers
 https://github.com/SamCStolley/Tic-tac-toe-gameCS457
-https://github.com/articuno03/blackjack_game.git
 https://github.com/SeanCSU212/cs457_proj.git
 https://github.com/kyljgr/shippy
 https://github.com/ryanmartel/ConnectFour
