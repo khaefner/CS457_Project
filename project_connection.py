@@ -73,6 +73,9 @@ class ProjectConnection:
 
     def start_multi(self,directory):
 
+
+        server_cmd = "clear && echo 'Sleeping during pip install' && sleep 20 && clear && PS1='SERVER>' && echo '===============Running SERVER==================\n' && python server.py -p 12345 "
+        client_cmd = "clear && echo 'Sleeping during pip install' && sleep 20 && clear && PS1='CLIENT>' && echo '===============Running CLIENT==================\n' && python client.py -i potato.cs.colostate.edu -p 12345 "
         # Split the window into two panes, top and bottom
         pane0 = self.window.active_pane
         self.window.split(attach=True, direction=libtmux.constants.PaneDirection.Above)
@@ -116,13 +119,14 @@ class ProjectConnection:
 
 
         #run server on potato
-        command = "clear && echo 'Sleeping during pip install' && sleep 20 && python server.py -p 12345"
+        #command = "clear && echo 'Sleeping during pip install' && sleep 20 && python server.py -p 12345"
+        command = server_cmd
         self.execute_command_on_one('potato',command)
 
         #run clients
-        command = "clear && echo 'Sleeping during pip install' && sleep 20 && python client.py -i potato.cs.colostate.edu -p 12345"
+        command = client_cmd
         self.execute_command_on_one('pepper',command)
-        command = "clear && echo 'Sleeping during pip install' && sleep 20 && python client.py -i potato.cs.colostate.edu -p 12345"
+        command = client_cmd
         self.execute_command_on_one('pumpkin',command)
 
         # Attach to the session
