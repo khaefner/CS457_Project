@@ -1,2 +1,2 @@
-libtmux==0.37.0
-simple-term-menu==1.6.4
+libtmux
+simple-term-menu

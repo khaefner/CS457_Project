@@ -35,7 +35,7 @@ def read_urls_from_file(file_path):
             dir_name = path_segments[0]
             dirs.append(dir_name)
     
-    dirs = sorted(dirs)
+    dirs = sorted(dirs, key=str.lower)
     dirs.insert(0,"-->Pull Projects")
     dirs.insert(1,"-->Update Projects")
     dirs.insert(2,"_______________________")

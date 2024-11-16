@@ -1,4 +1,5 @@
 import libtmux
+import time
 
 class ProjectConnection:
     def __init__(self, servers, session_name="project_session"):
@@ -30,8 +31,9 @@ class ProjectConnection:
         self.session = self.server.new_session(session_name=self.session_name,attach=False)
 
         # Get the active window in the session
-        #self.window = self.session.new_window(attach=True, window_name="my my")
         self.window = self.session.active_window
+        #self.window.set_window_option("window-style", "fg=colour247,bg=colour236")
+        self.window.set_window_option("pane-border-style", "fg=colour235,bg=colour238")
         pane = self.window.attached_pane
         #self.session.attach()
 
@@ -86,9 +88,9 @@ class ProjectConnection:
         }
 
         # Initial connection to servers
-        self.initial_connection('pumpkin', f'ssh {self.servers[0]}')
-        self.initial_connection('pepper', f'ssh {self.servers[1]}')
-        self.initial_connection('potato', f'ssh {self.servers[2]}')
+        self.initial_connection('pumpkin', f'ssh -Y {self.servers[0]}')
+        self.initial_connection('pepper', f'ssh -Y {self.servers[1]}')
+        self.initial_connection('potato', f'ssh -Y {self.servers[2]}')
 
         # Execute additional commands
         command = 'cd CS457_Project/projects/'+directory
@@ -111,6 +113,17 @@ class ProjectConnection:
         command = "pip install --no-deps -r requirements.txt"
         self.execute_command_on_one('pumpkin',command)
         #self.execute_on_each_server(command)
+
+
+        #run server on potato
+        command = "clear && echo 'Sleeping during pip install' && sleep 20 && python server.py -p 12345"
+        self.execute_command_on_one('potato',command)
+
+        #run clients
+        command = "clear && echo 'Sleeping during pip install' && sleep 20 && python client.py -i potato.cs.colostate.edu -p 12345"
+        self.execute_command_on_one('pepper',command)
+        command = "clear && echo 'Sleeping during pip install' && sleep 20 && python client.py -i potato.cs.colostate.edu -p 12345"
+        self.execute_command_on_one('pumpkin',command)
 
         # Attach to the session
         self.session.attach()
