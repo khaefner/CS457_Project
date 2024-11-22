@@ -18,9 +18,10 @@ class ProjectConnection:
         # Check if the session already exists
         existing_session = self.server.has_session(self.session_name)
         if existing_session:
-            print(f"Connecting to existing session '{self.session_name}'.")
-            self.session = self.server.sessions.get(session_name=self.session_name)
-            self.connect_to_existing_session()
+            #print(f"Connecting to existing session '{self.session_name}'.")
+            #self.session = self.server.sessions.get(session_name=self.session_name)
+            #self.connect_to_existing_session()
+            self.server.kill_session(sesion_name)
         else:
             print(f"Creating and setting up a new session '{self.session_name}'.")
             self.setup_tmux_session()
@@ -31,7 +32,7 @@ class ProjectConnection:
         self.session = self.server.new_session(session_name=self.session_name,attach=False)
 
         # Get the active window in the session
-        self.window = self.session.active_window
+        self.window = self.session.attached_window
         #self.window.set_window_option("window-style", "fg=colour247,bg=colour236")
         self.window.set_window_option("pane-border-style", "fg=colour235,bg=colour238")
         pane = self.window.attached_pane
@@ -40,10 +41,10 @@ class ProjectConnection:
     def connect_to_existing_session(self):
         self.session.attach()
         # Get the active window in the session
-        self.window = self.session.active_window
+        self.window = self.session.attached_window
 
     def send_echo(self):
-        pane = self.window.active_pane
+        pane = self.window.attached_pane
         pane.send_keys("echo 'Hello world'")
 
     def initial_connection(self, server_name, command):
@@ -59,7 +60,7 @@ class ProjectConnection:
         pane.send_keys(command, enter=True)
 
     def start_single(self):
-        pane0 = self.window.active_pane
+        pane0 = self.window.attached_pane
         self.pane_mapping = {
             'pumpkin': self.window.panes[0],
         }
@@ -77,12 +78,12 @@ class ProjectConnection:
         server_cmd = "clear && echo 'Sleeping during pip install' && sleep 20 && clear && PS1='SERVER>' && echo '===============Running SERVER==================\n' && python server.py -p 12345 "
         client_cmd = "clear && echo 'Sleeping during pip install' && sleep 20 && clear && PS1='CLIENT>' && echo '===============Running CLIENT==================\n' && python client.py -i potato.cs.colostate.edu -p 12345 "
         # Split the window into two panes, top and bottom
-        pane0 = self.window.active_pane
-        self.window.split(attach=True, direction=libtmux.constants.PaneDirection.Above)
+        pane0 = self.window.attached_pane
+        self.window.split_window(attach=True,vertical=True)
 
         # Split the top pane horizontally to create side-by-side panes for the first two servers
         pane1 = self.window.panes[0]
-        pane1.split(attach=True, direction=libtmux.constants.PaneDirection.Right)
+        pane1.split_window(attach=True,vertical=False)
         # Map server names to their corresponding pane objects
         self.pane_mapping = {
             'pumpkin': self.window.panes[0],
@@ -130,5 +131,5 @@ class ProjectConnection:
         self.execute_command_on_one('pumpkin',command)
 
         # Attach to the session
-        self.session.attach()
+        self.session.attach_session()
         print("Tmux session with split windows created successfully. Attached to session.")
