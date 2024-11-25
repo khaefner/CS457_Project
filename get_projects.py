@@ -18,7 +18,15 @@ def get_clean_repo_url_and_name(original_link):
 def extract_links_from_file(file_path, unique_directories):
     with open(file_path, 'r', encoding='utf-8') as file:
         for line in file:
-            original_link = line.strip()
+        # Split each line by '|'
+            parts = line.strip().split('|')
+            
+            #if there is a name on the team use that
+            if len(parts) == 2:
+                name, url = parts
+            else:
+                url = line.strip()
+            original_link = url.strip()
             if original_link.startswith('http') and 'github.com' in original_link:
                 repo_url, owner_name = get_clean_repo_url_and_name(original_link)
                 if repo_url and owner_name:
