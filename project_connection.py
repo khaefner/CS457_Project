@@ -75,8 +75,8 @@ class ProjectConnection:
     def start_multi(self,directory):
 
 
-        server_cmd = "clear && echo 'Sleeping during pip install' && sleep 20 && clear && PS1='SERVER>' && echo '===============Running SERVER==================\n' && python server.py -p 12345 "
-        client_cmd = "clear && echo 'Sleeping during pip install' && sleep 20 && clear && PS1='CLIENT>' && echo '===============Running CLIENT==================\n' && python client.py -i potato.cs.colostate.edu -p 12345 "
+        server_cmd = "clear && echo 'Sleeping during pip install' && sleep 20 && clear && echo '===============Running SERVER==================\n' && python server.py -p 12345 "
+        client_cmd = "clear && echo 'Sleeping during pip install' && sleep 20 && clear && echo '===============Running CLIENT==================\n' && python client.py -i potato.cs.colostate.edu -p 12345 "
         # Split the window into two panes, top and bottom
         pane0 = self.window.attached_pane
         self.window.split_window(attach=True,vertical=True)
@@ -109,6 +109,13 @@ class ProjectConnection:
         self.execute_command_on_one('pumpkin',command)
         #self.execute_on_each_server(command)
         
+        #set prompt
+        command = "PS1='CLIENT>'"
+        self.execute_command_on_one('pumpkin',command)
+        self.execute_command_on_one('pepper',command)
+        command = "PS1='SERVER>'"
+        self.execute_command_on_one('potato',command)
+
         #activate venv
         command = "source venv/bin/activate"
         self.execute_on_each_server(command)

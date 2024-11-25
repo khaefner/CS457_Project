@@ -53,6 +53,7 @@ def main(update=False):
             if update:
                 try:
                     subprocess.run(['git', 'stash'], check=True)
+                    subprocess.run(['git', 'checkout', 'main'], check=True)
                     subprocess.run(['git', '-C', full_directory_path, 'pull'], check=True)
                 except subprocess.CalledProcessError:
                     print(f"Failed to pull the latest changes in {full_directory_path}")

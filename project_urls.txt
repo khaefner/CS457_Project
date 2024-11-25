@@ -34,8 +34,7 @@ https://github.com/isabellamurriettaschool/CatTrivia
 https://github.com/jake222colostate/tic-tac-toe-sherman
 https://github.com/FireChickenProductivity/tic-tac-toe-game
 https://github.com/ivans-csu/super-cow-powers
-https://github.com/SamCStolley/Tic-tac-toe-gameCS457
-https://github.com/SeanCSU212/cs457_proj.git
+Team SCS 2024|https://github.com/SamCStolley/Tic-tac-toe-gameCS457
 https://github.com/kyljgr/shippy
 https://github.com/ryanmartel/ConnectFour
 https://github.com/turnred/connect-4-game
@@ -65,4 +64,4 @@ https://github.com/ace1nfinity/Online-TicTacToe
 https://github.com/cabbabbage/CS457
 https://github.com/davisschenk/connect-four
 https://github.com/xDankTankx/TriviaGame-CS457
-https://github.com/rgriffit2098/tic-tac-toe-game
+Team Trash Panda|https://github.com/rgriffit2098/tic-tac-toe-game
