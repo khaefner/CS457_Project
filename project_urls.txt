@@ -5,7 +5,7 @@ https://github.com/GraysonMor31/Treasure-Hunt
 https://github.com/goron117/word-game
 https://github.com/ebottoms/online-battleship
 https://github.com/DiegoCelorio/CS457_Game
-https://github.com/TristanTruxal/The-Number-Game
+Truxal|https://github.com/TristanTruxal/The-Number-Game
 https://github.com/ingjacob/CS457_Term_Project
 https://github.com/lukeelerson1/CS457-Connect-4
 https://github.com/Casey4848/Battleship-Game
@@ -18,7 +18,7 @@ https://github.com/HasaniStudios/tic-tac-toe-game.git
 https://github.com/epitera/tic-tac-toe
 https://github.com/neljson/Turtle-Trivia
 https://github.com/guerschu/snake-game-cs457-fall
-https://github.com/JT-Higgins/Computer-Networks-Project
+WiFi Warriors|https://github.com/JT-Higgins/Computer-Networks-Project
 https://github.com/coreydc7/TCPoker
 https://github.com/RylieDD/networking-quiz-game
 https://github.com/safetrix/CS457-VideoGame
@@ -38,28 +38,28 @@ Team SCS 2024|https://github.com/SamCStolley/Tic-tac-toe-gameCS457
 https://github.com/kyljgr/shippy
 https://github.com/ryanmartel/ConnectFour
 Three Musketeers|https://github.com/joe-maitan/Tic-tac-toe-app
-https://github.com/turnred/connect-4-game
+Turner|https://github.com/turnred/connect-4-game
 https://github.com/Mitch1469/457classProject
 https://github.com/cooperlarson/BattleShip
 https://github.com/paige-marie/cs457_Project
 https://github.com/ImJeffSchool/CSU-457-Networking
 https://github.com/masterex1000/CS457-Term-Project
 https://github.com/articuno03/blackjack_game
-https://github.com/Dureke/connect-four-game.git
+Tic-Tac-Oh-No|https://github.com/Dureke/connect-four-game.git
 https://github.com/LonelyUlmo/CS457_Project
 https://github.com/andrewvanhorn/cs457-game
 https://github.com/lxh13/tic-tac-toe-game
-https://github.com/dschreibe/tic-tac-toe-game
+Tictag Team|https://github.com/dschreibe/tic-tac-toe-game
 https://github.com/ethanfantl/NetworkedTicTacToe
 The Dangerous Ducks|https://github.com/rm0819/dangerous-ducks-game-cs457
 https://github.com/Peter0924/CS457_Group_Project_Connect_Four
 https://github.com/Josh1302/word-decipher
 https://github.com/etaketa/Tic-Tac-Toe-Game
-https://github.com/AllyW1/CS457_Project
+Whittern|https://github.com/AllyW1/CS457_Project
 https://github.com/Swade1227/hangman-multiplayer-game
 https://github.com/collyn-miller/hangman
 https://github.com/reagant22/tic-tac-toe-game
-https://github.com/brentjColoS/server-based_tic-tac-toe
+Westward Bound|https://github.com/brentjColoS/server-based_tic-tac-toe
 https://github.com/JacobLickiss-CSU/connect-4-game
 https://github.com/ace1nfinity/Online-TicTacToe
 https://github.com/cabbabbage/CS457

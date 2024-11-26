@@ -121,7 +121,7 @@ class ProjectConnection:
         self.execute_on_each_server(command)
 
         #activate venv
-        command = "pip install --no-deps -r requirements.txt"
+        command = "pip install --no-deps --ignore-requires-python -r requirements.txt"
         self.execute_command_on_one('pumpkin',command)
         #self.execute_on_each_server(command)
 
